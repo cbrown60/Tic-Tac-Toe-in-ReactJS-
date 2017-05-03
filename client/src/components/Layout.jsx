@@ -10,7 +10,7 @@ class Layout extends React.Component {
       const sqNumber = index + 1
 
       return(
-        <Square value={square} key={index} squareNumber={sqNumber}/> 
+        <Square value={square} key={index} squareNumber={sqNumber} onClick={this.props.clickHandler}/> 
 
           )
     }) 

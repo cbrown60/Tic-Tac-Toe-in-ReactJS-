@@ -1,17 +1,31 @@
 import React from 'react'
 
-const Square = (props) => {
-  
+class Square extends React.Component{
 
+  constructor(props){
+    super(props)
+    this.state = {
+      index: props.squareNumber
+    }
+  }
+
+  squareClickHandler(){
+    
+    this.props.onClick(this.state.index)
+  }
+  
+  render(){
     return(
-      <div className ='square'>
-        {props.value} 
+      <div className ='square' onClick={this.squareClickHandler.bind(this)} >
+        {this.props.value} 
         <div className='square-content'>
-        {props.squareNumber}
+        {this.props.squareNumber}
           </div>
 
       </div>
       )
+  }
+
   
 }
 
