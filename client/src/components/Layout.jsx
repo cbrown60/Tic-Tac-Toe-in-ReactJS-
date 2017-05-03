@@ -16,8 +16,10 @@ class Layout extends React.Component {
     }) 
 
     return(
+      <div className="board-wrapper">
       <div className='layout' >
       {squareNodes} 
+      </div>
       </div>
       )
 
