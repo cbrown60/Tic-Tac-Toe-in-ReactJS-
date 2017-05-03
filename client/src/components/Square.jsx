@@ -10,7 +10,6 @@ class Square extends React.Component{
   }
 
   squareClickHandler(){
-    
     this.props.onClick(this.state.index)
   }
   
@@ -19,7 +18,7 @@ class Square extends React.Component{
       <div className ='square' onClick={this.squareClickHandler.bind(this)} >
         {this.props.value} 
         <div className='square-content'>
-        {this.props.squareNumber}
+        
           </div>
 
       </div>
