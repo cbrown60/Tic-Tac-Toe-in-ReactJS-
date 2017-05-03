@@ -11,28 +11,24 @@ class BoardContainer extends React.Component{
 
 }
 
-  setClickedBox(index){
-     // console.log("box clicked wih index value = ", index) 
-     console.log(index) 
-     this.setState((prevState)=> {
-      const newSquares = prevState.squares
+setClickedBox(index){
+
+  this.setState((prevState) => {
+
+    if(prevState.squares[index-1] === ''){
+
       if (prevState.player === 'player 1'){
-        newSquares[index - 1] = "x"
-        return {squares: newSquares, player: 'player 2'}
+        prevState.squares[index - 1] = "x"
+        prevState.player = "player 2"
       } else {
-        newSquares[index - 1] = "o"
-        return {squares: newSquares, player: 'player 1'}
+        prevState.squares[index - 1] = "o"
+        prevState.player = "player 1"
       }
-      
-     })
-    // this.setState((prevState) => {
-    //   if (prevState.player === 'player 1'){
-    //     prevState.squares[index] = 'x'
-    //     return {squares: , player: 'player 2'}
-    //   }
-    //   return {}
-    //    })
-  }
+    }
+    return prevState
+  })
+
+}
 
 
 
